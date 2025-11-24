@@ -114,7 +114,7 @@ export default function AdminPage() {
       imageUrl: (product as any).imageUrl || '',      // Asumiendo que viene del backend
       CategoryId: (product as any).CategoryId?.toString() || '' // Asumiendo que viene del backend
     });
-    setEditingId(product.id);
+    setEditingId(Number(product.id));
   };
 
   const handleDelete = async (id: number) => {
@@ -297,7 +297,7 @@ export default function AdminPage() {
                           Editar
                         </button>
                         <button
-                          onClick={() => handleDelete(product.id)}
+                          onClick={() => handleDelete(Number(product.id))}
                           className="text-red-600 hover:text-red-900 font-medium"
                         >
                           Eliminar
