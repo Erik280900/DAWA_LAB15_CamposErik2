@@ -27,8 +27,8 @@ export default function LoginPage() {
       Cookies.set('token', data.token);
       Cookies.set('role', data.role);
       
-      if (data.role === 'ADMIN') router.push('/admin');
-      else router.push('/');
+      if (data.role === 'ADMIN') window.location.href = '/admin';
+      else window.location.href = '/';
     } else {
       alert(data.message);
     }
